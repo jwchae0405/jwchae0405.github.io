@@ -61,4 +61,14 @@ def check(driver, name, yymmdd, pw):
     felem(driver, '//*[@id="container"]/div/div/div[2]/div[2]/dl[3]/dd/ul/li[1]/label').click()
     felem(driver, '//*[@id="btnConfirm"]').click()
     time.sleep(1.0)
+
+def main(infos):
+    for i in infos:
+        driver = webdriver.Chrome('chromedriver.exe')
+        f = i.getInfo()
+        try:
+            check(driver, f[0], f[1], f[2])
+        except:
+            print('[FATAL ERROR] Failed ({0})'.format(f[0]))
+        driver.quit()
 {% endhighlight %}
