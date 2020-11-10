@@ -10,12 +10,20 @@ meta: "Springfield"
 자가진단 자동화 프로그램.
 (Last update : 2020-11-10)
 
+## Dependency
+
+{% highlight python %}
+'''
+selenium module (with + chromedriver.exe)
+time module
+'''
+from selenium import webdriver
+import time
+{% endhighlight %}
+
 ## Source Code (Python)
 
 {% highlight python %}
-from selenium import webdriver
-import time
-
 class Info:
     def __init__(self, _name, _yymmdd, _pw):
         self.name = _name
