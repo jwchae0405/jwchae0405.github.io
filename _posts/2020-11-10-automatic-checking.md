@@ -12,7 +12,7 @@ meta: "Springfield"
 
 ## Source Code (Python)
 
-```
+{% highlight python %}
 from selenium import webdriver
 import time
 
@@ -61,4 +61,4 @@ def check(driver, name, yymmdd, pw):
     felem(driver, '//*[@id="container"]/div/div/div[2]/div[2]/dl[3]/dd/ul/li[1]/label').click()
     felem(driver, '//*[@id="btnConfirm"]').click()
     time.sleep(1.0)
-```
+{% endhighlight %}
