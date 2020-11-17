@@ -54,8 +54,8 @@ def check(driver, name, yymmdd, pw):
         time.sleep(0.5)
         felem(driver, '//*[@id="softBoardListLayer"]/div[2]/div[1]/ul/li').click()
         felem(driver, '//*[@id="softBoardListLayer"]/div[2]/div[2]/input').click()
-        felem(driver, '//*[@id="WriteInfoForm"]/table/tbody/tr[3]/td/input').send_keys(name)
-        felem(driver, '//*[@id="WriteInfoForm"]/table/tbody/tr[4]/td/input').send_keys(yymmdd)
+        felem(driver, '//*[@id="WriteInfoForm"]/table/tbody/tr[2]/td/input').send_keys(name)
+        felem(driver, '//*[@id="WriteInfoForm"]/table/tbody/tr[3]/td/input').send_keys(yymmdd)
         felem(driver, '//*[@id="btnConfirm"]').click()
         time.sleep(1.0)
         felem(driver, '//*[@id="WriteInfoForm"]/table/tbody/tr/td/input').send_keys(pw)
@@ -77,6 +77,6 @@ def main(infos):
         try:
             check(driver, f[0], f[1], f[2])
         except:
-            print('[FATAL ERROR] Failed ({0})'.format(f[0]))
+            print(f'Failed to check (name:{f[0]})')
         driver.quit()
 {% endhighlight %}
