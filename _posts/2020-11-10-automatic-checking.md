@@ -8,7 +8,7 @@ meta: "Springfield"
 ---
 
 자가진단 자동화 프로그램.
-(Last update : 2020-11-10)
+(Last update : 2020-11-18)
 
 ## Dependency
 
@@ -46,7 +46,7 @@ def check(driver, name, yymmdd, pw):
         felem(driver, '//*[@id="btnConfirm"]').click()
     except:
         felem(driver, '//*[@id="btnConfirm2"]').click()
-        felem(driver, '//*[@id="WriteInfoForm"]/table/tbody/tr[2]/td/button').click()
+        felem(driver, '//*[@id="WriteInfoForm"]/table/tbody/tr[1]/td/button').click()
         felem(driver, '//*[@id="softBoardListLayer"]/div[2]/div[1]/table/tbody/tr[1]/td/select/option[8]').click()
         felem(driver, '//*[@id="softBoardListLayer"]/div[2]/div[1]/table/tbody/tr[2]/td/select/option[5]').click()
         felem(driver, '//*[@id="softBoardListLayer"]/div[2]/div[1]/table/tbody/tr[3]/td[1]/input').send_keys('울산과학고등학교')
