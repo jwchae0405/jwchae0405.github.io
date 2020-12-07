@@ -24,6 +24,11 @@ import time
 ## Source Code (Python)
 
 {% highlight python %}
+from selenium import webdriver
+import time
+import random
+import datetime
+
 class Info:
     def __init__(self, _name, _yymmdd, _pw):
         self.name = _name
@@ -72,11 +77,19 @@ def check(driver, name, yymmdd, pw):
 
 def main(infos):
     for i in infos:
-        driver = webdriver.Chrome('chromedriver.exe')
         f = i.getInfo()
+        driver = webdriver.Chrome('chromedriver.exe')
         try:
+            print(f'Checking : {f[0]}')
             check(driver, f[0], f[1], f[2])
         except:
             print(f'Failed to check (name:{f[0]})')
         driver.quit()
+        if datetime.datetime.today().hour == 7 and datetime.datetime.today().minute > 35:
+            d = (45 - datetime.datetime.today().minute) * 2.5
+            if d < 0:
+                d = 0
+            time.sleep(d * random.random() * random.random())
+        else:
+            time.sleep(200 * random.random() * random.random())
 {% endhighlight %}
